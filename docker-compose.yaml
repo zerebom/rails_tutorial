@@ -12,7 +12,8 @@ services:
   web:
     build: .
     #this sentence mean to abriviation of "rails server"
-    command: rails s -p 3001 -b '0.0.0.0'
+    # src: https://qiita.com/paranishian/items/862ce4de104992df48e1
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
     volumes:
       - .:/app_name
     ports:
